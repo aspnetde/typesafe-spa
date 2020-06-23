@@ -29,3 +29,13 @@ That scope of functionality allows us to look at the following questions:
 ## Approaches
 
 1. [Elmish](https://elmish.github.io/elmish/) + [Feliz](https://github.com/Zaid-Ajaj/Feliz)
+
+
+## Resources
+
+- [Elmish Parent-child composition](https://elmish.github.io/elmish/parent-child.html#Parent-child-composition)
+- [Elm Shared State example](https://github.com/ohanhi/elm-shared-state)
+- [Design of Large Elm apps](https://groups.google.com/forum/#!msg/elm-discuss/_cfOu88oCx4/madaA1rBAQAJ)
+- [elm-taco-donut](https://github.com/madasebrof/elm-taco-donut)
+- [Pros/cons of Elmish vs plain React components (via Fable.React)](https://github.com/elmish/elmish/issues/154 )
+- [Child-Parent Communication in Elm: OutMsg vs Translator vs NoMap Patterns](https://medium.com/@_rchaves_/child-parent-communication-in-elm-outmsg-vs-translator-vs-nomap-patterns-f51b2a25ecb1)
