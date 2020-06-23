@@ -30,6 +30,14 @@ That scope of functionality allows us to look at the following questions:
 
 1. [Elmish](https://elmish.github.io/elmish/) + [Feliz](https://github.com/Zaid-Ajaj/Feliz)
 
+## Observations
+
+### Elmish + Feliz
+
+- When intriducing intents (aka external messages), the parent doesn't know about them until the first match expression tells it about. So the compiler wouldn't complain if we forget to add it to the parent(s).
+- Routing can fail silently when the expected route isn't found. Sometimes that's just a matter of lower and upper case letters.
+- `Feliz.Router` is best being used with arrays representing the url segments, because that's what can be passed to the `format()` function (it does not accept lists).
+- The Feliz syntax felt rather verbose at first. Unfortunately, `Html` is a type and not a module and therefore "cannot be opened". However, in direct comparison to the "classic" Elmish view syntax, for real world tags there seems not to be that much of a difference in terms of the number of written lines of code. Good old HTML will in most cases stay shorter, though...
 
 ## Resources
 
