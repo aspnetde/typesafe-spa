@@ -32,7 +32,7 @@ let update msg state =
         if state.UserName = "user" && state.Password = "test" then
             state, NoOp, Cmd.ofMsg LoginSucceeded
         else
-            state, NoOp, Cmd.ofMsg (LoginFailed "Dude, user name or password are incorrect.")
+            state, NoOp, Cmd.ofMsg (LoginFailed "Oops, user name or password are incorrect.")
     | LoginFailed error ->
         { state with Error = Some(error) }, NoOp, Cmd.none
     | LoginSucceeded ->
