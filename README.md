@@ -1,6 +1,6 @@
 # Typesafe SPA
 
-This is a small demo that explores different approaches for creating a potentially scalable single page application.
+This is a small demo that explores different approaches for creating a potentially scalable single page application. See [here](https://aspnetde.github.io/typesafe-spa/) for the completely unspectacular sample apps in action.
 
 ## Structure
 
@@ -28,7 +28,7 @@ That scope of functionality allows us to look at the following questions:
 
 ## Approaches
 
-1. [Elmish](https://elmish.github.io/elmish/) + [Feliz](https://github.com/Zaid-Ajaj/Feliz)
+1. [Elmish](https://elmish.github.io/elmish/) + [Feliz](https://github.com/Zaid-Ajaj/Feliz) – [Demo app](https://aspnetde.github.io/typesafe-spa/elmish-feliz)
 
 ## Observations
 
