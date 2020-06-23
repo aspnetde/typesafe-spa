@@ -28,7 +28,10 @@ That scope of functionality allows us to look at the following questions:
 
 ## Approaches
 
-1. [Elmish](https://elmish.github.io/elmish/) + [Feliz](https://github.com/Zaid-Ajaj/Feliz) – [Demo app](https://aspnetde.github.io/typesafe-spa/elmish-feliz)
+### Elmish + Feliz
+
+- Based on [Elmish](https://elmish.github.io/elmish/) and [Feliz](https://github.com/Zaid-Ajaj/Feliz)
+- [Demo app](https://aspnetde.github.io/typesafe-spa/elmish-feliz)
 
 ## Observations
 
