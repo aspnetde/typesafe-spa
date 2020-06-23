@@ -74,7 +74,7 @@ let update msg state =
         | Authenticated.Intent.UpdateUserName userName ->
             let session = { state.Session.Value with User = userName }
             let state = { state with Session = Some(session) }
-            state, Router.navigate("app", "profile")
+            state, Router.navigate(Profile.Url)
         | Authenticated.Intent.NoOp ->
             { state with CurrentPage = Page.Authenticated state' }, Cmd.map AuthenticatedMsg cmd
 
@@ -82,7 +82,7 @@ let update msg state =
         let state', intent, cmd = Anonymous.update msg' state'
         match intent with
         | Anonymous.Intent.StartSession userName ->
-            { state with Session = Some({ User = userName }) }, Router.navigate("app", "dashboard")
+            { state with Session = Some({ User = userName }) }, Router.navigate(Dashboard.Url)
         | Anonymous.Intent.NoOp ->
             { state with CurrentPage = Page.Anonymous state' }, Cmd.map AnonymousMsg cmd
 
@@ -101,7 +101,7 @@ let render state dispatch =
                 | Page.Home -> 
                     Html.a [
                         prop.text "Hello, stranger! You're not signed in."
-                        prop.href (Router.format("login"))
+                        prop.href (Router.format(Login.Url))
                     ]
             ]
         ]

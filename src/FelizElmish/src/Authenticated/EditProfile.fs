@@ -1,6 +1,6 @@
 module EditProfile
 
-let Url = [ "app"; "profile"; "edit" ]
+let Url = [| "app"; "profile"; "edit" |]
 
 open Feliz
 open Elmish

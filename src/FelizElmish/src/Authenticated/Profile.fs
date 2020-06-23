@@ -1,6 +1,6 @@
 module Profile
 
-let Url = [ "app"; "profile" ]
+let Url = [| "app"; "profile" |]
 
 open Feliz
 open Feliz.Router

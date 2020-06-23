@@ -1,6 +1,6 @@
 module Dashboard
 
-let Url = [ "app"; "dashboard" ]
+let Url = [| "app"; "dashboard" |]
 
 open Feliz
 open Elmish
