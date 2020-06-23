@@ -40,13 +40,11 @@ let update msg state =
 
 let render (state: State) dispatch =
     Html.div [
-        prop.children [
-            Html.a [
-                prop.href (Router.format(""))
-                prop.text "Home"
-            ]
-            Html.hr []
-            match state.CurrentPage with
-            | Page.Login state -> Login.render state (LoginMsg >> dispatch)
+        Html.a [
+            prop.href (Router.format(""))
+            prop.text "Home"
         ]
+        Html.hr []
+        match state.CurrentPage with
+        | Page.Login state -> Login.render state (LoginMsg >> dispatch)
     ]

@@ -96,26 +96,24 @@ let update msg state =
 
 let render (state: State) (dispatch: Msg -> unit) =
     Html.div [
-        prop.children [
-            Html.a [
-                prop.href (Router.format(Dashboard.Url))
-                prop.text "Dashboard"
-            ]
-            Html.text " | "
-            Html.a [
-                prop.href (Router.format(Profile.Url))
-                prop.text "Profile"
-            ]
-            Html.text " | "
-            Html.a [
-                prop.text "Logout"
-                prop.href "#"
-                prop.onClick (fun _ -> dispatch Msg.Logout)
-            ]
-            Html.hr []
-            match state.CurrentPage with
-            | Page.Profile state -> Profile.render state (ProfileMsg >> dispatch)
-            | Page.EditProfile state -> EditProfile.render state (EditProfileMsg >> dispatch)
-            | Page.Dashboard state -> Dashboard.render state
+        Html.a [
+            prop.href (Router.format(Dashboard.Url))
+            prop.text "Dashboard"
         ]
+        Html.text " | "
+        Html.a [
+            prop.href (Router.format(Profile.Url))
+            prop.text "Profile"
+        ]
+        Html.text " | "
+        Html.a [
+            prop.text "Logout"
+            prop.href "#"
+            prop.onClick (fun _ -> dispatch Msg.Logout)
+        ]
+        Html.hr []
+        match state.CurrentPage with
+        | Page.Profile state -> Profile.render state (ProfileMsg >> dispatch)
+        | Page.EditProfile state -> EditProfile.render state (EditProfileMsg >> dispatch)
+        | Page.Dashboard state -> Dashboard.render state
     ]
