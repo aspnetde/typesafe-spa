@@ -12,5 +12,5 @@ let init (session: Session) =
 
 let render state =
     Html.div [
-        prop.text (sprintf "Welcome, %s! " state.Session.User)
+        prop.textf "Welcome, %s! " state.Session.User
     ]
