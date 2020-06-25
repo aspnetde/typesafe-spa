@@ -3,38 +3,37 @@ namespace Navigation
 open Feliz.Router
 
 [<RequireQualifiedAccess>]
-type Url =
+type AnonymousUrl =
     | Home
     | Login 
     with 
     member this.Format() =
         match this with
-        | Url.Home -> Router.format("")
-        | Url.Login -> Router.format("login")
+        | AnonymousUrl.Home -> Router.format("")
+        | AnonymousUrl.Login -> Router.format("login")
+
+[<RequireQualifiedAccess>]
+type AuthenticatedUrl = AuthenticatedUrl
 
 [<RequireQualifiedAccess>]
 type PageSection =
-    | Authenticated of Url
-    | Anonymous of Url
+    | Authenticated of AnonymousUrl
+    | Anonymous of AnonymousUrl
 
-module Url = 
+module AnonymousUrl = 
     let parse segments =
         match segments |> List.tryHead with
         | Some head ->
             match head with
-            | "login" -> Url.Login
-            | _ -> Url.Home
-        | None -> Url.Home
+            | "login" -> AnonymousUrl.Login
+            | _ -> AnonymousUrl.Home
+        | None -> AnonymousUrl.Home
 
 module PageSection =
     let parse segments =
-        let section =
-            match segments |> List.tryHead with
-            | Some head ->
-                match head with
-                | "login" -> PageSection.Anonymous
-                | _ -> failwith "Not implemented"
-            | None -> PageSection.Anonymous
-
-        let url = segments |> Url.parse
-        section url
+        match segments |> List.tryHead with
+        | Some head ->
+            match head with
+            | "login" -> PageSection.Anonymous(segments |> AnonymousUrl.parse)
+            | _ -> failwith "Not implemented"
+        | None -> PageSection.Anonymous(segments |> AnonymousUrl.parse)
