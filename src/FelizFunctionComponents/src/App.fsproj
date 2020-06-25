@@ -3,7 +3,11 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
     <ItemGroup>
-        <Compile Include="Url.fs" />
+        <Compile Include="Navigation.fs" />
+        <Compile Include="Anonymous/Login.fs" />
+        <Compile Include="Anonymous/Home.fs" />
+        <Compile Include="Anonymous/Anonymous.fs" />
+        <Compile Include="Authenticated/Authenticated.fs" />
         <Compile Include="App.fs" />
         <Compile Include="Main.fs" />
     </ItemGroup>
