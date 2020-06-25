@@ -10,7 +10,7 @@ open Elmish.Debug
 open Elmish.HMR
 
 // App
-Program.mkProgram App.init App.update App.render
+Program.mkSimple id id (fun _ _ -> App.app())
 #if DEBUG
 |> Program.withDebugger
 #endif

@@ -93,7 +93,7 @@ let update msg state =
 let render state dispatch =
     let application =
         Html.div [
-            Html.h1 [ prop.text "Feliz Full Test" ]
+            Html.h1 [ prop.text "Feliz Elmish Test" ]
             match state.CurrentPage with
             | Page.Authenticated state -> Authenticated.render state (AuthenticatedMsg >> dispatch)
             | Page.Anonymous state -> Anonymous.render state (AnonymousMsg >> dispatch)

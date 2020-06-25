@@ -1,32 +1,26 @@
 module App
 
+open Foo
 open Feliz
-open Elmish
+open Feliz.Router
 
-type State = { Count: int }
-
-type Msg =
-    | Increment
-    | Decrement
-
-let init() = { Count = 0 }, Cmd.none
-
-let update (msg: Msg) (state: State) =
-    match msg with
-    | Increment -> { state with Count = state.Count + 1 }, Cmd.none
-    | Decrement -> { state with Count = state.Count - 1 }, Cmd.none
-
-let render (state: State) (dispatch: Msg -> unit) =
-    Html.div [
-        Html.button [
-            prop.onClick (fun _ -> dispatch Increment)
-            prop.text "Increment"
+let app = React.functionComponent(fun () -> 
+    let segments, setSegments = React.useState([])
+    
+    let application =
+        Html.div [
+            Html.h1 [ prop.text "Feliz Function Component Test" ]
+            match segments |> Url.parse with
+            | Url.Login -> Html.div[]
+            | Url.Home ->
+                Html.a [
+                    prop.text "Hello, stranger! You're not signed in."
+                    prop.href (Url.Login.Format())
+                ]
         ]
 
-        Html.button [
-            prop.onClick (fun _ -> dispatch Decrement)
-            prop.text "Decrement"
-        ]
-
-        Html.h1 state.Count
+    Router.router [
+        Router.onUrlChanged(fun segments -> setSegments(segments))
+        Router.application [ application ]
     ]
+)
