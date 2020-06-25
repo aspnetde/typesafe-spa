@@ -3,7 +3,10 @@ module Anonymous
 open Feliz
 open Navigation
 
-let render = React.functionComponent(fun url ->
+type Props =
+    { Url: AnonymousUrl }
+
+let render = React.functionComponent(fun props ->
     Html.div [
         Html.a [
             prop.text "Home"
@@ -17,7 +20,7 @@ let render = React.functionComponent(fun url ->
         
         Html.hr []
 
-        match url with 
+        match props.Url with 
         | AnonymousUrl.Login -> Login.render()
         | AnonymousUrl.Home -> Home.render()
     ]

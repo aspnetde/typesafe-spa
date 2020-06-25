@@ -12,7 +12,7 @@ let render = React.functionComponent(fun () ->
             Html.h1 [ prop.text "Feliz Function Component Test" ]
             match segments |> PageSection.parse with
             | PageSection.Authenticated -> Html.div[]
-            | PageSection.Anonymous url -> Anonymous.render(url)
+            | PageSection.Anonymous url -> Anonymous.render({ Url = url })
         ]
 
     Router.router [
