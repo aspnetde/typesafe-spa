@@ -4,6 +4,7 @@
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Navigation.fs" />
+        <Compile Include="AppContext.fs" />
         <Compile Include="Anonymous/Login.fs" />
         <Compile Include="Anonymous/Home.fs" />
         <Compile Include="Anonymous/Anonymous.fs" />
