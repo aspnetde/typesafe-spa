@@ -19,7 +19,7 @@ let update _ state =
 
 let render state _ =
     Html.div [
-        Html.text (sprintf "Hello, %s! Go ahead and " state.Session.User)
+        Html.textf "Hello, %s! Go ahead and " state.Session.User
         Html.a [
             prop.text "edit"
             prop.href (Router.format EditProfile.Url)
