@@ -3,7 +3,6 @@ module Login
 open AppNavigation
 open Elmish
 open Feliz
-open Feliz.Router
 open Feliz.UseElmish
 
 type private State = 
