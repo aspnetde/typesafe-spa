@@ -54,6 +54,7 @@ That scope of functionality allows us to look at the following questions:
 - Working with the context API of react needs getting used to, but is then relatively straightforward
 - Passing data to components through props is straightforward as well
 - `useElmish` is useful for more complex forms (see login and edit profile), but simple operations can also be handled more pragmatically (see logout)
+- Right now, Hot Module Reloading (or Fast Refresh) [does not work](https://github.com/Zaid-Ajaj/Feliz/issues/203). Which is a clear obstacle through development time.
 - TBD: Testability
 
 ## Comparison
