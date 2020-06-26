@@ -32,14 +32,7 @@ That scope of functionality allows us to look at the following questions:
 - Based on [Fable](https://fable.io/), [Elmish](https://elmish.github.io/elmish/), and [Feliz](https://github.com/Zaid-Ajaj/Feliz)
 - [Demo app](https://aspnetde.github.io/typesafe-spa/elmish-feliz)
 
-### React Function Components + Feliz
-
-- Based on [Fable](https://fable.io/), [Feliz](https://github.com/Zaid-Ajaj/Feliz), and [Felize useElmish](https://zaid-ajaj.github.io/Feliz/#/Feliz/UseWithElmish)
-- [Demo app](https://aspnetde.github.io/typesafe-spa/function-components-feliz)
-
-## Observations
-
-### Elmish + Feliz
+#### Observations
 
 - When introducing intents (aka external messages), the parent doesn't know about them until we start handling them there. So the compiler wouldn't complain if we forget to add it to the parent(s).
 - Routing can fail silently when the expected route isn't found. Sometimes that's just a matter of lower and upper case letters.
@@ -49,6 +42,11 @@ That scope of functionality allows us to look at the following questions:
 - Does not require much knowledge of React
 
 ### React Function Components + Feliz
+
+- Based on [Fable](https://fable.io/), [Feliz](https://github.com/Zaid-Ajaj/Feliz), and [Felize useElmish](https://zaid-ajaj.github.io/Feliz/#/Feliz/UseWithElmish)
+- [Demo app](https://aspnetde.github.io/typesafe-spa/function-components-feliz)
+
+#### Observations
 
 - Much less boilerplate code to write in comparison to Elmish + Feliz
 - It is basically React written with F#, so React knowledge is needed
