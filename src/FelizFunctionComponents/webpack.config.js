@@ -18,7 +18,7 @@ var CONFIG = {
     indexHtmlTemplate: "./src/index.html",
     fsharpEntry: "./src/App.fsproj",
     cssEntry: "./styles/main.scss",
-    outputDir: "./deploy",
+    outputDir: "../../docs/function-components-feliz",
     assetsDir: "./public",
     devServerPort: 8081,
     // When using webpack-dev-server, you may need to redirect some calls
