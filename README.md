@@ -16,7 +16,6 @@ This is a small demo that explores different approaches for creating a potential
 - After the name has changed, that change must be reflected in all parts of the application: dashboard, and profile page.
 - Although "edit profile" could be seen as a child of "profile", it is kept on the same level for simplicity reasons (we potentially already are at the third level here).
 
-
 ## Goals
 
 That scope of functionality allows us to look at the following questions:
@@ -30,8 +29,13 @@ That scope of functionality allows us to look at the following questions:
 
 ### Elmish + Feliz
 
-- Based on [Elmish](https://elmish.github.io/elmish/) and [Feliz](https://github.com/Zaid-Ajaj/Feliz)
+- Based on [Fable](https://fable.io/), [Elmish](https://elmish.github.io/elmish/), and [Feliz](https://github.com/Zaid-Ajaj/Feliz)
 - [Demo app](https://aspnetde.github.io/typesafe-spa/elmish-feliz)
+
+### React Function Components + Feliz
+
+- Based on [Fable](https://fable.io/), [Feliz](https://github.com/Zaid-Ajaj/Feliz), and [Felize useElmish](https://zaid-ajaj.github.io/Feliz/#/Feliz/UseWithElmish)
+- [Demo app](https://aspnetde.github.io/typesafe-spa/function-components-feliz)
 
 ## Observations
 
@@ -41,6 +45,18 @@ That scope of functionality allows us to look at the following questions:
 - Routing can fail silently when the expected route isn't found. Sometimes that's just a matter of lower and upper case letters.
 - `Feliz.Router` is best being used with arrays representing the url segments, because that's what can be passed to the `format()` function (it does not accept lists).
 - The Feliz syntax felt rather verbose at first. Unfortunately, `Html` is a type and not a module and therefore "cannot be opened". However, in direct comparison to the "classic" Elmish view syntax, for real world tasks there seems not to be that much of a difference in terms of the number of written lines of code. Good old HTML will in most cases still stay shorter, though...
+- Except for commands fully testable, as everything is (mostly pure) F# functions
+- Does not require much knowledge of React
+
+### React Function Components + Feliz
+
+- Much less boilerplate code to write in comparison to Elmish + Feliz
+- It is basically React written with F#, so React knowledge is needed
+- In addition, regular updates are needed whenever React changes
+- Working with the context API of react needs getting used to, but is then relatively straightforward
+- Passing data to components through props is straightforward as well
+- `useElmish` is useful for more complex forms (see login and edit profile), but simple operations can also be handled more pragmatically (see logout)
+- TBD: Testability
 
 ## Resources
 
