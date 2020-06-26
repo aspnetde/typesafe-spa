@@ -18,7 +18,7 @@ type AuthenticatedUrl =
     with 
     member this.Format() =
         match this with
-        | Dashboard -> Router.format("app/dashboard")
+        | Dashboard -> Router.format("app", "dashboard")
     member this.Navigate() =
         match this with
         | Dashboard -> Router.navigate("app", "dashboard")
