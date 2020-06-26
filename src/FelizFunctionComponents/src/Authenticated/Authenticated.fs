@@ -8,6 +8,8 @@ type Props =
 
 let render = React.functionComponent(fun props ->
     let context = React.useContext AppContext.instance
+    // Could also be solved with useElmish, but for such a simple
+    // operation it seems legit to make it a simple function
     let logout _ =
         context.SetSession({ context.Session with User = ""})
         Browser.Dom.window.location.href <- AnonymousUrl.Home.Format()
