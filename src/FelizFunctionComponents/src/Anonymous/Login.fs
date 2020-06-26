@@ -18,7 +18,7 @@ type private Msg =
     | LoginFailed of string
     | LoginCompleted
 
-let private init() = { UserName = ""; Password = ""; Error = None }, Cmd.none
+let private init() = { UserName = "user"; Password = "test"; Error = None }, Cmd.none
 
 let private updateSession (context: AppContext.ContextData) user =
     context.SetSession({ context.Session with User = user })
@@ -60,14 +60,14 @@ let render = React.functionComponent(fun () ->
 
             Html.input [
                 prop.type'.text
-                prop.defaultValue "user"
+                prop.defaultValue state.UserName
                 prop.placeholder "User name"
                 prop.onChange (UserNameSet >> dispatch)
             ]
             Html.br []
             Html.input [
                 prop.type'.password
-                prop.defaultValue "password"
+                prop.defaultValue state.Password
                 prop.placeholder "Password"
                 prop.onChange (PasswordSet >> dispatch)
             ]
