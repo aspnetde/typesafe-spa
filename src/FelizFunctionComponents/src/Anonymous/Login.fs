@@ -1,7 +1,9 @@
 module Login
 
+open AppNavigation
 open Elmish
 open Feliz
+open Feliz.Router
 open Feliz.UseElmish
 
 type private State = 
@@ -12,29 +14,33 @@ type private State =
 type private Msg =
     | UserNameSet of string
     | PasswordSet of string
-    | StartLogin
+    | StartLogin of AppContext.ContextData
     | LoginFailed of string
-    | LoginSucceeded
+    | LoginCompleted
 
 let private init() = { UserName = ""; Password = ""; Error = None }, Cmd.none
+
+let private updateSession (context: AppContext.ContextData) user =
+    context.SetSession({ context.Session with User = user })
+    LoginCompleted
 
 let private update msg state =
     match msg with
     | UserNameSet userName -> { state with UserName = userName }, Cmd.none
     | PasswordSet password -> { state with Password = password }, Cmd.none
-    | StartLogin -> 
+    | StartLogin context -> 
         if state.UserName = "user" && state.Password = "test" then
-            state, Cmd.ofMsg LoginSucceeded
+            state, Cmd.ofMsg (updateSession context state.UserName)
         else
             state, Cmd.ofMsg (LoginFailed "Oops, user name or password are incorrect.")
     | LoginFailed error ->
         { state with Error = Some(error) }, Cmd.none
-    | LoginSucceeded ->
-        printfn "next?"
-        state, Cmd.none // TODO
+    | LoginCompleted ->
+        state, AuthenticatedUrl.Dashboard.Navigate()
 
 let render = React.functionComponent(fun () ->
     let state, dispatch = React.useElmish(init, update, [| |])
+    let context = React.useContext AppContext.instance
 
     Html.div [
         Html.fieldSet [
@@ -65,7 +71,7 @@ let render = React.functionComponent(fun () ->
             ]
             Html.br []
             Html.button [
-                prop.onClick (fun _ -> dispatch StartLogin)
+                prop.onClick (fun _ -> dispatch (StartLogin context))
                 prop.text "Get in"
             ]
         ]

@@ -1,7 +1,7 @@
 module Home
 
+open AppNavigation
 open Feliz
-open Navigation
 
 let render = React.functionComponent(fun () ->
     Html.a [

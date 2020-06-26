@@ -1,4 +1,4 @@
-namespace Navigation
+namespace AppNavigation
 
 open Feliz.Router
 
@@ -13,11 +13,19 @@ type AnonymousUrl =
         | AnonymousUrl.Login -> Router.format("login")
 
 [<RequireQualifiedAccess>]
-type AuthenticatedUrl = AuthenticatedUrl
+type AuthenticatedUrl = 
+    | Dashboard
+    with 
+    member this.Format() =
+        match this with
+        | Dashboard -> Router.format("app/dashboard")
+    member this.Navigate() =
+        match this with
+        | Dashboard -> Router.navigate("app", "dashboard")
 
 [<RequireQualifiedAccess>]
 type PageSection =
-    | Authenticated of AnonymousUrl
+    | Authenticated of AuthenticatedUrl
     | Anonymous of AnonymousUrl
 
 module AnonymousUrl = 
@@ -29,11 +37,18 @@ module AnonymousUrl =
             | _ -> AnonymousUrl.Home
         | None -> AnonymousUrl.Home
 
+module AuthenticatedUrl = 
+    let parse segments =
+        match segments  with
+        | [ "app"; "dashboard" ] -> AuthenticatedUrl.Dashboard
+        | _ -> failwith "Unknown authenticated Url"
+
 module PageSection =
     let parse segments =
         match segments |> List.tryHead with
         | Some head ->
             match head with
             | "login" -> PageSection.Anonymous(segments |> AnonymousUrl.parse)
+            | "app" -> PageSection.Authenticated(segments |> AuthenticatedUrl.parse)
             | _ -> failwith "Not implemented"
         | None -> PageSection.Anonymous(segments |> AnonymousUrl.parse)

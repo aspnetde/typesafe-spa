@@ -5,7 +5,15 @@ open Feliz
 type Session =
     { User: string }
 
-[<Literal>]
-let Name = "Session"
+type ContextData =
+    { Session: Session
+      SetSession: Session -> unit }
 
-let instance = React.createContext(name = Name, defaultValue = { User = "" })
+let defaultSession = { User = "" }
+
+let private defaultData =
+    { Session = defaultSession
+      SetSession = fun _ -> () }
+
+let instance = 
+    React.createContext(name = "Session", defaultValue = defaultData)

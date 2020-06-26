@@ -1,7 +1,7 @@
 module Anonymous
 
+open AppNavigation
 open Feliz
-open Navigation
 
 type Props =
     { Url: AnonymousUrl }

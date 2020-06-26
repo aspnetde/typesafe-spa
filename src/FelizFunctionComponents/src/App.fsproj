@@ -8,6 +8,7 @@
         <Compile Include="Anonymous/Login.fs" />
         <Compile Include="Anonymous/Home.fs" />
         <Compile Include="Anonymous/Anonymous.fs" />
+        <Compile Include="Authenticated/Dashboard.fs" />
         <Compile Include="Authenticated/Authenticated.fs" />
         <Compile Include="App.fs" />
         <Compile Include="Main.fs" />

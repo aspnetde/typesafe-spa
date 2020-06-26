@@ -1,7 +1,12 @@
 module Authenticated
 
+open AppNavigation
 open Feliz
 
-let render = React.functionComponent(fun () ->
-    Html.text "Authenticated"
+type Props =
+    { Url: AuthenticatedUrl }
+
+let render = React.functionComponent(fun props ->
+    match props.Url with
+    | AuthenticatedUrl.Dashboard -> Dashboard.render()
 )

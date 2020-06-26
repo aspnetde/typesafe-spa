@@ -1,6 +1,6 @@
 module App
 
-open Navigation
+open AppNavigation
 open Feliz
 open Feliz.Router
 
@@ -11,12 +11,24 @@ let render = React.functionComponent(fun () ->
         Html.div [
             Html.h1 [ prop.text "Feliz Function Component Test" ]
             match segments |> PageSection.parse with
-            | PageSection.Authenticated -> Html.div[]
-            | PageSection.Anonymous url -> Anonymous.render({ Url = url })
+            | PageSection.Authenticated url -> Authenticated.render { Url = url }
+            | PageSection.Anonymous url -> Anonymous.render { Url = url }
         ]
 
-    Router.router [
-        Router.onUrlChanged(fun segments -> setSegments(segments))
-        Router.application [ application ]
-    ]
+    let router =
+        Router.router [
+            Router.onUrlChanged(fun segments -> setSegments(segments))
+            Router.application [ application ]
+        ]
+
+    let session, setSession = React.useState(AppContext.defaultSession)
+    let appContextData : AppContext.ContextData =
+        { Session = session
+          SetSession = setSession }
+
+    React.contextProvider(
+        AppContext.instance, 
+        appContextData, 
+        React.fragment [ router ]
+    )
 )
