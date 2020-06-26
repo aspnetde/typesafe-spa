@@ -56,6 +56,17 @@ That scope of functionality allows us to look at the following questions:
 - `useElmish` is useful for more complex forms (see login and edit profile), but simple operations can also be handled more pragmatically (see logout)
 - TBD: Testability
 
+## Comparison
+
+### Lines of Code
+
+Although it is not the most important factor, it might be interesting to see how much more or less code every approach produces. This comparison was created through [cloc](https://github.com/AlDanial/cloc) and only counts those files that are actually used to write the app. So the compiled JavaScript, for example, is not considered.
+
+| Approach                    | App Files | Blanks | Comments | Code |
+|-----------------------------|-----------|--------|----------|------|
+| Function Components + Feliz | 13        | 59     | 6        | 316  |
+| Elmish + Feliz              | 11        | 77     | 6        | 404  |
+
 ## Resources
 
 - [Elmish Parent-child composition](https://elmish.github.io/elmish/parent-child.html#Parent-child-composition)
