@@ -60,12 +60,14 @@ let render = React.functionComponent(fun () ->
 
             Html.input [
                 prop.type'.text
+                prop.defaultValue "user"
                 prop.placeholder "User name"
                 prop.onChange (UserNameSet >> dispatch)
             ]
             Html.br []
             Html.input [
                 prop.type'.password
+                prop.defaultValue "password"
                 prop.placeholder "Password"
                 prop.onChange (PasswordSet >> dispatch)
             ]
