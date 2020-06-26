@@ -15,13 +15,19 @@ type AnonymousUrl =
 [<RequireQualifiedAccess>]
 type AuthenticatedUrl = 
     | Dashboard
+    | Profile
+    | EditProfile
     with 
     member this.Format() =
         match this with
         | Dashboard -> Router.format("app", "dashboard")
+        | Profile -> Router.format("app", "profile")
+        | EditProfile -> Router.format("app", "profile", "edit")
     member this.Navigate() =
         match this with
         | Dashboard -> Router.navigate("app", "dashboard")
+        | Profile -> Router.navigate("app", "profile")
+        | EditProfile -> Router.navigate("app", "profile", "edit")
 
 [<RequireQualifiedAccess>]
 type PageSection =
@@ -41,6 +47,8 @@ module AuthenticatedUrl =
     let parse segments =
         match segments  with
         | [ "app"; "dashboard" ] -> AuthenticatedUrl.Dashboard
+        | [ "app"; "profile"; "edit" ] -> AuthenticatedUrl.EditProfile
+        | [ "app"; "profile" ] -> AuthenticatedUrl.Profile
         | _ -> failwith "Unknown authenticated Url"
 
 module PageSection =

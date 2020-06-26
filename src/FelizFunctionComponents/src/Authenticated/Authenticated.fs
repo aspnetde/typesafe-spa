@@ -19,7 +19,7 @@ let render = React.functionComponent(fun props ->
         ]
         Html.text " | "
         Html.a [
-            //prop.href (Router.format(Profile.Url))
+            prop.href (AuthenticatedUrl.Profile.Format())
             prop.text "Profile"
         ]
         Html.text " | "
@@ -31,5 +31,7 @@ let render = React.functionComponent(fun props ->
         Html.hr []
         match props.Url with
         | AuthenticatedUrl.Dashboard -> Dashboard.render()
+        | AuthenticatedUrl.Profile -> Profile.render()
+        | AuthenticatedUrl.EditProfile -> EditProfile.render()
     ]
 )
