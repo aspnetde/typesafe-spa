@@ -24,19 +24,19 @@ let private updateSession (context: AppContext.ContextData) user =
     context.SetSession({ context.Session with User = user })
     LoginCompleted
 
+let private validateCredentials context state =
+    if state.UserName = "user" && state.Password = "test" then
+        state, Cmd.ofMsg (updateSession context state.UserName)
+    else
+        state, Cmd.ofMsg (LoginFailed "Oops, user name or password are incorrect.")
+
 let private update msg state =
     match msg with
     | UserNameSet userName -> { state with UserName = userName }, Cmd.none
     | PasswordSet password -> { state with Password = password }, Cmd.none
-    | StartLogin context -> 
-        if state.UserName = "user" && state.Password = "test" then
-            state, Cmd.ofMsg (updateSession context state.UserName)
-        else
-            state, Cmd.ofMsg (LoginFailed "Oops, user name or password are incorrect.")
-    | LoginFailed error ->
-        { state with Error = Some(error) }, Cmd.none
-    | LoginCompleted ->
-        state, AuthenticatedUrl.Dashboard.Navigate()
+    | StartLogin context -> validateCredentials context state
+    | LoginFailed error -> { state with Error = Some(error) }, Cmd.none
+    | LoginCompleted -> state, AuthenticatedUrl.Dashboard.Navigate()
 
 let render = React.functionComponent(fun () ->
     let state, dispatch = React.useElmish(init, update, [| |])
