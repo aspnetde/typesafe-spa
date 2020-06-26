@@ -22,7 +22,7 @@ let render = React.functionComponent(fun () ->
         ]
 
     let session, setSession = React.useState(AppContext.defaultSession)
-    let appContextData : AppContext.ContextData =
+    let appContextData: AppContext.ContextData =
         { Session = session
           SetSession = setSession }
 
