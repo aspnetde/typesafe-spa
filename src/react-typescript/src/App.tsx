@@ -1,6 +1,9 @@
 import React from "react";
 import { HashRouter, Switch, Route, Link } from "react-router-dom";
 
+import Anonymous from "./Anonymous";
+import Authenticated from "./Authenticated";
+
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
 //
@@ -13,6 +16,9 @@ import { HashRouter, Switch, Route, Link } from "react-router-dom";
 export default function App() {
   return (
     <HashRouter>
+      <h1>React + TypeScript Test</h1>
+      <Anonymous />
+      <Authenticated />
       <div>
         <ul>
           <li>
