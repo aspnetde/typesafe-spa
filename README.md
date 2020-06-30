@@ -57,6 +57,22 @@ That scope of functionality allows us to look at the following questions:
 - Right now, Hot Module Reloading (or Fast Refresh) [does not work](https://github.com/Zaid-Ajaj/Feliz/issues/203). Which is a clear obstacle during development time.
 - TBD: Testability
 
+### React + TypeScript
+
+- Based purely on [React](https://reactjs.org/), and [TypeScript](https://www.typescriptlang.org/)
+- [Demo app](https://aspnetde.github.io/typesafe-spa/react-typescript/)
+
+#### Observations
+
+- Having not actively worked with TypeScript since its early days in 2012, it was surprisingly easy to get started.
+- Although this small demo doesn't use much of the language's features, those that are being used were really easy to pick up and a pleasure to work with.
+- The tooling based on Visual Studio Code is amazing. I not only like the [automatic code-formatting](https://prettier.io/) but also the really fast feedback loop that is provided during development time.
+- When the build breaks, it does so within milliseconds, and error messages are always helpful. Most of the time, however, it already becomes obvious that something went wrong while typing.
+- I could take over all the concepts (components, context, ...) from the previous implementation with Reaction Function Components + Feliz, which allowed me to implement the TypeScript demo within a couple of hours.
+- I decided to implement the two parts of the app which contain a bit more "logic" (login + edit user name) without following any strict pattern like MVU. As everything is self-contained in its own component, this seems reasonable.
+- react-router is powerful but relatively easy to get started with.
+- As with the Feliz sample, function components are easy to reason about.
+
 ## Comparison
 
 ### Lines of Code
@@ -64,9 +80,22 @@ That scope of functionality allows us to look at the following questions:
 Although it is not the most important factor, it might be interesting to see how much more or less code every approach produces. This comparison was created through [cloc](https://github.com/AlDanial/cloc) and only counts those files that are actually used to write the app. So the compiled JavaScript, for example, is not considered.
 
 | Approach                    | App Files | Blanks | Comments | Code |
-|-----------------------------|-----------|--------|----------|------|
+| --------------------------- | --------- | ------ | -------- | ---- |
 | Function Components + Feliz | 13        | 59     | 6        | 316  |
 | Elmish + Feliz              | 11        | 77     | 6        | 404  |
+| React + TypeScript          | 11        | 27     | 1        | 241  |
+
+#### Performance and bundle size
+
+The following is measured by looking at the [final and production-ready compile SPAs](https://aspnetde.github.io/typesafe-spa/) with Google Chrome (83) on macOS. It is obviously not objective and may be improved by some settings (I just used the default configuration as provided by the templates I used). But it gives an idea about what to expect.
+
+| Approach                    | Requests | Transferred | Resources | DOMContentLoaded | Load   |
+| --------------------------- | -------- | ----------- | --------- | ---------------- | ------ |
+| Function Components + Feliz | 8        | 253 KB      | 466 KB    | 167 ms           | 166 ms |
+| Elmish + Feliz              | 7        | 253 KB      | 468 KB    | 171 ms           | 173 ms |
+| React + TypeScript          | 7        | 216 KB      | 328 KB    | 131 ms           | 132 ms |
+
+(Transferred = compressed, Resources = uncompressed; in each case the fastest run was chosen)
 
 ## Resources
 
@@ -74,5 +103,9 @@ Although it is not the most important factor, it might be interesting to see how
 - [Elm Shared State example](https://github.com/ohanhi/elm-shared-state)
 - [Design of Large Elm apps](https://groups.google.com/forum/#!msg/elm-discuss/_cfOu88oCx4/madaA1rBAQAJ)
 - [elm-taco-donut](https://github.com/madasebrof/elm-taco-donut)
-- [Pros/cons of Elmish vs plain React components (via Fable.React)](https://github.com/elmish/elmish/issues/154 )
+- [Pros/cons of Elmish vs plain React components (via Fable.React)](https://github.com/elmish/elmish/issues/154)
 - [Child-Parent Communication in Elm: OutMsg vs Translator vs NoMap Patterns](https://medium.com/@_rchaves_/child-parent-communication-in-elm-outmsg-vs-translator-vs-nomap-patterns-f51b2a25ecb1)
+- [TypeScript docs](https://www.typescriptlang.org/docs/home.html)
+- [React Router](https://reacttraining.com/react-router/web/example/basic)
+- [React+TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react-typescript-cheatsheet#reacttypescript-cheatsheets)
+- [Create React App](https://create-react-app.dev/)
