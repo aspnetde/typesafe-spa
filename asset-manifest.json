@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/typesafe-spa/react-typescript/static/js/main.b69b978c.chunk.js",
-    "main.js.map": "/typesafe-spa/react-typescript/static/js/main.b69b978c.chunk.js.map",
+    "main.js": "/typesafe-spa/react-typescript/static/js/main.8dfec8ff.chunk.js",
+    "main.js.map": "/typesafe-spa/react-typescript/static/js/main.8dfec8ff.chunk.js.map",
     "runtime-main.js": "/typesafe-spa/react-typescript/static/js/runtime-main.fc9f21ae.js",
     "runtime-main.js.map": "/typesafe-spa/react-typescript/static/js/runtime-main.fc9f21ae.js.map",
-    "static/js/2.aac3d1bf.chunk.js": "/typesafe-spa/react-typescript/static/js/2.aac3d1bf.chunk.js",
-    "static/js/2.aac3d1bf.chunk.js.map": "/typesafe-spa/react-typescript/static/js/2.aac3d1bf.chunk.js.map",
+    "static/js/2.e9ec512e.chunk.js": "/typesafe-spa/react-typescript/static/js/2.e9ec512e.chunk.js",
+    "static/js/2.e9ec512e.chunk.js.map": "/typesafe-spa/react-typescript/static/js/2.e9ec512e.chunk.js.map",
     "index.html": "/typesafe-spa/react-typescript/index.html",
-    "precache-manifest.e08737f89471070f017ec10d3f16b2ec.js": "/typesafe-spa/react-typescript/precache-manifest.e08737f89471070f017ec10d3f16b2ec.js",
+    "precache-manifest.9b8f7def16908183c45527f263e74058.js": "/typesafe-spa/react-typescript/precache-manifest.9b8f7def16908183c45527f263e74058.js",
     "service-worker.js": "/typesafe-spa/react-typescript/service-worker.js",
-    "static/js/2.aac3d1bf.chunk.js.LICENSE.txt": "/typesafe-spa/react-typescript/static/js/2.aac3d1bf.chunk.js.LICENSE.txt"
+    "static/js/2.e9ec512e.chunk.js.LICENSE.txt": "/typesafe-spa/react-typescript/static/js/2.e9ec512e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fc9f21ae.js",
-    "static/js/2.aac3d1bf.chunk.js",
-    "static/js/main.b69b978c.chunk.js"
+    "static/js/2.e9ec512e.chunk.js",
+    "static/js/main.8dfec8ff.chunk.js"
   ]
 }
