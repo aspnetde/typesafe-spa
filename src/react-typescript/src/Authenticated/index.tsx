@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import AppContext from "../AppContext";
 import Dashboard from "./dashboard";
 import Profile from "./profile";
@@ -14,14 +14,22 @@ export default function Authenticated() {
   return (
     <div>
       <Link to="/app/dashboard">Dashboard</Link> |{" "}
-      <Link to="/app/profile">Profile</Link>|{" "}
+      <Link to="/app/profile">Profile</Link> |{" "}
       <a href="/login" onClick={logout}>
         Logout
       </a>
       <hr />
-      <Dashboard />
-      <Profile />
-      <EditProfile />
+      <Switch>
+        <Route exact path="/app/dashboard">
+          <Dashboard />
+        </Route>
+        <Route exact path="/app/profile">
+          <Profile />
+        </Route>
+        <Route exact path="/app/profile/edit">
+          <EditProfile />
+        </Route>
+      </Switch>
     </div>
   );
 }
