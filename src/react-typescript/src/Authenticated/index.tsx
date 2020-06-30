@@ -15,7 +15,7 @@ export default function Authenticated() {
     <div>
       <Link to="/app/dashboard">Dashboard</Link> |{" "}
       <Link to="/app/profile">Profile</Link>|{" "}
-      <a href="/" onClick={logout}>
+      <a href="/login" onClick={logout}>
         Logout
       </a>
       <hr />

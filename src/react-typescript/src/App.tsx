@@ -1,12 +1,49 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 import AppContext from "./AppContext";
 import Anonymous from "./Anonymous";
 import Authenticated from "./Authenticated";
 
+interface IPrivateRouteProps {
+  children: React.ReactNode;
+  path: string;
+  isAuthenticated: Boolean;
+}
+
+function PrivateRoute({
+  children,
+  isAuthenticated,
+  ...rest
+}: IPrivateRouteProps) {
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        isAuthenticated ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: location },
+            }}
+          />
+        )
+      }
+    />
+  );
+}
+
 export default function App() {
   const [session, setSession] = React.useState(AppContext.defaultSession);
+  const isAuthenticated = session.user?.length > 0;
+
   return (
     <Router>
       <h1>React + TypeScript Test</h1>
@@ -20,9 +57,9 @@ export default function App() {
           <Route exact path="/login">
             <Anonymous />
           </Route>
-          <Route path="/app">
+          <PrivateRoute isAuthenticated={isAuthenticated} path="/app">
             <Authenticated />
-          </Route>
+          </PrivateRoute>
         </Switch>
       </AppContext.instance.Provider>
     </Router>
