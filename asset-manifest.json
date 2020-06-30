@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/typesafe-spa/react-typescript/static/js/main.b69b978c.chunk.js",
+    "main.js.map": "/typesafe-spa/react-typescript/static/js/main.b69b978c.chunk.js.map",
+    "runtime-main.js": "/typesafe-spa/react-typescript/static/js/runtime-main.fc9f21ae.js",
+    "runtime-main.js.map": "/typesafe-spa/react-typescript/static/js/runtime-main.fc9f21ae.js.map",
+    "static/js/2.aac3d1bf.chunk.js": "/typesafe-spa/react-typescript/static/js/2.aac3d1bf.chunk.js",
+    "static/js/2.aac3d1bf.chunk.js.map": "/typesafe-spa/react-typescript/static/js/2.aac3d1bf.chunk.js.map",
+    "index.html": "/typesafe-spa/react-typescript/index.html",
+    "precache-manifest.e08737f89471070f017ec10d3f16b2ec.js": "/typesafe-spa/react-typescript/precache-manifest.e08737f89471070f017ec10d3f16b2ec.js",
+    "service-worker.js": "/typesafe-spa/react-typescript/service-worker.js",
+    "static/js/2.aac3d1bf.chunk.js.LICENSE.txt": "/typesafe-spa/react-typescript/static/js/2.aac3d1bf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fc9f21ae.js",
+    "static/js/2.aac3d1bf.chunk.js",
+    "static/js/main.b69b978c.chunk.js"
+  ]
+}
