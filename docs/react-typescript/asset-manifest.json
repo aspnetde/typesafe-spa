@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/static/js/main.b69b978c.chunk.js",
-    "main.js.map": "/static/js/main.b69b978c.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.9c7c50c1.js",
-    "runtime-main.js.map": "/static/js/runtime-main.9c7c50c1.js.map",
-    "static/js/2.aac3d1bf.chunk.js": "/static/js/2.aac3d1bf.chunk.js",
-    "static/js/2.aac3d1bf.chunk.js.map": "/static/js/2.aac3d1bf.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.86bc49df7008129d2e4346931c2f29d0.js": "/precache-manifest.86bc49df7008129d2e4346931c2f29d0.js",
-    "service-worker.js": "/service-worker.js",
-    "static/js/2.aac3d1bf.chunk.js.LICENSE.txt": "/static/js/2.aac3d1bf.chunk.js.LICENSE.txt"
+    "main.js": "/typesafe-spa/react-typescript/static/js/main.b69b978c.chunk.js",
+    "main.js.map": "/typesafe-spa/react-typescript/static/js/main.b69b978c.chunk.js.map",
+    "runtime-main.js": "/typesafe-spa/react-typescript/static/js/runtime-main.fc9f21ae.js",
+    "runtime-main.js.map": "/typesafe-spa/react-typescript/static/js/runtime-main.fc9f21ae.js.map",
+    "static/js/2.aac3d1bf.chunk.js": "/typesafe-spa/react-typescript/static/js/2.aac3d1bf.chunk.js",
+    "static/js/2.aac3d1bf.chunk.js.map": "/typesafe-spa/react-typescript/static/js/2.aac3d1bf.chunk.js.map",
+    "index.html": "/typesafe-spa/react-typescript/index.html",
+    "precache-manifest.e08737f89471070f017ec10d3f16b2ec.js": "/typesafe-spa/react-typescript/precache-manifest.e08737f89471070f017ec10d3f16b2ec.js",
+    "service-worker.js": "/typesafe-spa/react-typescript/service-worker.js",
+    "static/js/2.aac3d1bf.chunk.js.LICENSE.txt": "/typesafe-spa/react-typescript/static/js/2.aac3d1bf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.9c7c50c1.js",
+    "static/js/runtime-main.fc9f21ae.js",
     "static/js/2.aac3d1bf.chunk.js",
     "static/js/main.b69b978c.chunk.js"
   ]
