@@ -1,4 +1,4 @@
-# Typesafe SPA
+# Type-Safe SPA
 
 This is a small demo that explores different approaches for creating a potentially scalable single page application. See [here](https://aspnetde.github.io/typesafe-spa/) for the completely unspectacular sample apps in action.
 
@@ -21,9 +21,9 @@ This is a small demo that explores different approaches for creating a potential
 That scope of functionality allows us to look at the following questions:
 
 1. How are parent-child relationships handled?
-2. How much boiler-plate code needs to be written?
+2. How much boilerplate code needs to be written?
 3. How much guidance and support provides the compiler?
-4. And after all: How maintanable aka scalable does the approach appear to be?
+4. How maintainable, aka scalable, does the approach appear to be?
 
 ## Approaches
 
