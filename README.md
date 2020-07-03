@@ -1,6 +1,6 @@
 # Type-Safe SPA
 
-This is a small demo that explores different approaches for creating a potentially scalable single page application. See [here](https://aspnetde.github.io/typesafe-spa/) for the completely unspectacular sample apps in action.
+This is a small demo that explores different approaches for creating a potentially scalable single page application. See [here](https://aspnetde.github.io/typesafe-spa/) for the completely unspectacular sample apps in action, and [here for my conclusion](https://thomasbandt.com/type-safe-spa-fable-fsharp-vs-typescript).
 
 ## Structure
 
